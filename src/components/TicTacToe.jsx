@@ -1,13 +1,13 @@
 import { useState } from "react";
 
 const TicTacToe = () => {
-    const [board, setBoard] = useState(Array(9).fill(null)); // 9 kotak
-    const [isXNext, setIsXNext] = useState(true); // Giliran pemain
-    const [winner, setWinner] = useState(null); // Cek siapa yang menang
+    const [board, setBoard] = useState(Array(9).fill(null)); 
+    const [isXNext, setIsXNext] = useState(true); 
+    const [winner, setWinner] = useState(null); 
 
-    // Fungsi saat klik kotak
+    // ketika tombol diklik
     const handleClick = (index) => {
-        if (board[index] || winner) return; // Kalau sudah diisi atau sudah ada pemenang, abaikan
+        if (board[index] || winner) return; 
 
         const newBoard = [...board];
         newBoard[index] = isXNext ? "X" : "O";
@@ -23,7 +23,7 @@ const TicTacToe = () => {
         }
     };
 
-    // Fungsi cek pemenang
+    // cek pemenang
     const calculateWinner = (squares) => {
         const lines = [
             [0, 1, 2],
@@ -45,7 +45,7 @@ const TicTacToe = () => {
         return null;
     };
 
-    // Fungsi reset game
+    // reset game
     const resetGame = () => {
         setBoard(Array(9).fill(null));
         setIsXNext(true);
